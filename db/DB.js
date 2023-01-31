@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const keys = require("../keys.js");
 
 let isConnected;
-const mongoURL = keys.MONGO_URI;
+const mongoURL =
+  "mongodb+srv://admin:admin@cluster0.nfitzrn.mongodb.net/?retryWrites=true&w=majority";
 mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", true);
 let isDbConnectionRequested = false;
