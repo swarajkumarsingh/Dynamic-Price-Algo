@@ -118,10 +118,13 @@
           },
           body: JSON.stringify(data),
         });
+        
 
         if (res.status === 400) {
+          alert("Invalid Input fields");
           return (document.getElementById("error").value = "Wrong input given");
         } else if (res.status === 400) {
+          alert("Internal Server Error");
           return (document.getElementById("error").value =
             "Internal Server Error");
         }
