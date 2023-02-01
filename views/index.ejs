@@ -63,7 +63,7 @@
           <label for="fullUrl" class="sr-only">Time of Day</label>
           <input
             required
-            placeholder="Time of Day"
+            placeholder="eg: evening, morning, night"
             type="url"
             name="time_of_day"
             id="time_of_day"
@@ -73,7 +73,7 @@
           <label for="fullUrl" class="sr-only">Location</label>
           <input
             required
-            placeholder="Location"
+            placeholder="eg: mall, tourist place, movie theater, airport, railways"
             type="url"
             name="location"
             id="location"
@@ -81,22 +81,21 @@
           />
           <div class="mt-4"></div>
         </div>
-        <button
-          type="submit"
-          onclick="event.preventDefault(); myFunction()"
-          class="btn btn-success mt-2"
-        >
+        <button type="submit" id="submit-btn" class="btn btn-success mt-2">
           Submit
         </button>
       </form>
     </div>
     <script>
-      async function myFunction() {
+      let btn = document.getElementById("submit-btn");
+      btn.addEventListener("click", async function (event) {
         let demand = document.getElementById("demand").value;
         let supply = document.getElementById("supply").value;
         let base_price = document.getElementById("base_price").value;
-        let time_of_day = document.getElementById("time_of_day").value;
-        let location = document.getElementById("location").value;
+        let time_of_day = document
+          .getElementById("time_of_day")
+          .value.toLowerCase();
+        let location = document.getElementById("location").value.toLowerCase();
 
         demand = Number(demand);
         supply = Number(supply);
@@ -135,7 +134,7 @@
 
         alert(`Algorithm Price: ${price}`);
         window.location = window.location.href;
-      }
+      });
     </script>
   </body>
 </html>
